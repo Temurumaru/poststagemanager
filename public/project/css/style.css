@@ -1,0 +1,71 @@
+.circle {
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+
+.circle-top {
+  padding: 100px;
+  animation-name: roundedCirle-left;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+animation-delay: .2s;
+
+}
+.circle-left {
+  padding: 180px;
+  animation-name: roundedCirle-left;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+animation-delay: .2s;
+
+}
+.circle-bottom {
+  padding: 100px;
+  animation-name: roundedCirle-bottom;
+animation-duration: 4s;
+animation-iteration-count: infinite;
+animation-delay: .2s;
+}
+
+@keyframes roundedCirle {
+  0% {
+    
+    transform: scale(1) ;
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes roundedCirle-left {
+  0% {
+    
+    transform: scale(1) ;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes roundedCirle-bottom {
+  0% {
+    
+    transform: scale(1) ;
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
