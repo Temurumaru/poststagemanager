@@ -12,6 +12,11 @@
   scroll-behavior: smooth;
 }
 
+.main {
+
+min-height: calc(100vh - 160px)
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background: #f6f9ff;

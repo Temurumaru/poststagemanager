@@ -72,43 +72,48 @@ if(@$_SESSION['user']) {
 // Controllers
 
 Route::post(
-  '/sign_in_validate', 
+  '/sign_in_validate',
   $p.'SignInController@SignIn'
 ) -> name('SignInValidate');
 
 Route::get(
-  '/search_client_post', 
+  '/search_client_post',
   $p.'SearchController@ClientPost'
-) -> name('SearchClientPost'); 
+) -> name('SearchClientPost');
 
-if(@$_SESSION['user']) {  
+if(@$_SESSION['user']) {
   Route::post(
-    '/create_client', 
+    '/create_client',
     $p.'ClientController@Create'
   ) -> name('CreateClient');
 
   Route::post(
-    '/update_client', 
+    '/update_client',
     $p.'ClientController@Update'
   ) -> name('UpdateClient');
 
   Route::post(
-    '/create_post', 
+    '/create_post',
     $p.'PostController@Create'
   ) -> name('CreatePost');
-  
-  Route::get(
-    '/search_client', 
-    $p.'SearchController@Client'
-  ) -> name('SearchClient'); 
+
+	Route::post(
+    '/delete_post',
+    $p.'PostController@Delete'
+  ) -> name('DeletePost');
 
   Route::get(
-    '/search_post', 
+    '/search_client',
+    $p.'SearchController@Client'
+  ) -> name('SearchClient');
+
+  Route::get(
+    '/search_post',
     $p.'SearchController@Post'
-  ) -> name('SearchPost'); 
+  ) -> name('SearchPost');
 
   Route::put(
-    '/continue_post', 
+    '/continue_post',
     $p.'PostStateController@Continue'
   ) -> name('ContinuePost');
 }

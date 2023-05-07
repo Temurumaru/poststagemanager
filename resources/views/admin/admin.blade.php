@@ -96,11 +96,10 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Asosiy sahifa</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active"><a href="/admin">Asosiy sahifa</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -132,7 +131,7 @@
           <!-- Recent Activity -->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Yukni otkazish:</h5>
+              <h5 class="card-title">Yukni Omborxonaga kelganni tasdiqlash:</h5>
 
               <div class="row mb-3">
                 <div class="col-sm-10">
@@ -149,7 +148,7 @@
           <!-- Recent Activity -->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Yangi ID qo’shish:</h5>
+              <h5 class="card-title">Yangi Mijoz qo'shish:</h5>
 
               <form method="POST" action="{{route('CreateClient')}}" class="row mb-3 justify-content-center">
                 @csrf
@@ -184,11 +183,11 @@
 
               <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                  Skladga kelgan posilkalar :
+                  Omborxonaga kirib kelgan yuklar:
                   <span class="badge bg-primary rounded-pill"> {{$m_sum}} ta</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                  Mijozga berilgan posilkalar :
+                  Mijozga berilgan yuklar:
                   <span class="badge bg-primary rounded-pill"> {{$m_cli_sum}} ta</span>
                 </li>
                

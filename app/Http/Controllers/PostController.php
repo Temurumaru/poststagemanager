@@ -29,4 +29,17 @@ class PostController extends Controller
 		return redirect() -> route('admin_profile', ['id' => $req -> clid]) -> with('success', "Yuk Yaratoldi!");
 
 	}
+
+	public function Delete(Request $req) {
+		$req -> validate([
+      "id" => "required|numeric",
+      "clid" => "required|numeric"
+    ]);
+
+    $post = R::findOne('posts', 'id = ?', [$req -> id]);
+
+    R::trash($post);
+
+		return redirect() -> route('admin_profile', ['id' => $req -> clid]) -> with('success', "Yuk ochirildi!");
+	}
 }

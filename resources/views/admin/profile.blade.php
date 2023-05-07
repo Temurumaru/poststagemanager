@@ -57,11 +57,10 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1  id="username"></h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-          <li class="breadcrumb-item active"><a href="#">Dashboard</a></li>
+          <li class="breadcrumb-item"><a href="/admin">Asosiy Sahifa</a></li>
           <li class="breadcrumb-item active" id="tkn"></li>
         </ol>
       </nav>
@@ -70,7 +69,7 @@
     <section class="section dashboard">
       <div class="row">
 
-        
+
         <!-- Right side columns -->
         <div class="col-lg-3">
 
@@ -84,7 +83,7 @@
                   <input type="text" id="search_post" placeholder="Track No" class="form-control">
                 </div>
                 <button id="search_post_submit" type="button" class="col-sm-2 btn btn-primary">
-                  <i class="ri-search-2-line"></i> 
+                  <i class="ri-search-2-line"></i>
                 </button>
               </div>
 
@@ -93,7 +92,7 @@
           <!-- Recent Activity -->
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Yangi Track Qo'shish:</h5>
+              <h5 class="card-title">Yangi yuk qo'shish:</h5>
 
               <form action="{{route('CreatePost')}}" method="post" class="mb-3 row justify-content-center">
                 @csrf
@@ -108,7 +107,7 @@
 
             </div>
           </div><!-- End Recent Activity -->
-          
+
 
         </div><!-- End Right side columns -->
 
@@ -121,7 +120,7 @@
               <div class="overflow-auto card recent-sales">
 
                 <div class="card-body">
-                  <h5 class="card-title">Yuklar </h5>
+                  <h5 class="card-title" > Mijozini yuklar tarixi: </h5>
                   {{-- <table class="table table-striped">
                     <thead>
                       <tr>
@@ -138,7 +137,7 @@
                         <td>MARSS TEAM</td>
                         <td>+998998070708</td>
                         <td>JT3015379758124</td>
-                      
+
                         <td class="d-flex ">
                           <div class="pagetitle ">
                             <nav style="--bs-breadcrumb-divider: '>';">
@@ -148,9 +147,9 @@
                                 <li class="breadcrumb-item active" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="10.08.21" aria-describedby="tooltip718061"><a  href="#" >Mijoz</a></li>
                               </ol>
                             </nav>
-                            
+
                           </div>
-                         
+
                         </td>
                       </tr>
                       <tr>
@@ -158,7 +157,7 @@
                         <td>MARSS TEAM</td>
                         <td>+998998070708</td>
                         <td>JT3015379758124</td>
-                      
+
                         <td class="d-flex ">
                           <div class="pagetitle ">
                             <nav style="--bs-breadcrumb-divider: '>';">
@@ -168,9 +167,9 @@
                                 <li class="breadcrumb-item " data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="10.08.21" aria-describedby="tooltip718061"><a  href="#" >Mijoz</a></li>
                               </ol>
                             </nav>
-                            
+
                           </div>
-                         
+
                         </td>
                       </tr>
                       <tr>
@@ -178,7 +177,7 @@
                         <td>MARSS TEAM</td>
                         <td>+998998070708</td>
                         <td>JT3015379758124</td>
-                      
+
                         <td class="d-flex ">
                           <div class="pagetitle ">
                             <nav style="--bs-breadcrumb-divider: '>';">
@@ -188,9 +187,9 @@
                                 <li class="breadcrumb-item " data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="10.08.21" aria-describedby="tooltip718061"><a  href="#" >Mijoz</a></li>
                               </ol>
                             </nav>
-                            
+
                           </div>
-                         
+
                         </td>
                       </tr>
                       <tr>
@@ -198,7 +197,7 @@
                         <td>MARSS TEAM</td>
                         <td>+998998070708</td>
                         <td>JT3015379758124</td>
-                      
+
                         <td class="d-flex ">
                           <div class="pagetitle ">
                             <nav style="--bs-breadcrumb-divider: '>';">
@@ -208,30 +207,30 @@
                                 <li class="breadcrumb-item active" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="10.08.21" aria-describedby="tooltip718061"><a  href="#" >Mijoz</a></li>
                               </ol>
                             </nav>
-                            
+
                           </div>
-                         
+
                         </td>
                       </tr>
-                    
-                      
+
+
                     </tbody>
                   </table> --}}
-                
+
                   <span id="posts_table"></span>
                 </div>
 
               </div>
             </div><!-- End Recent Sales -->
 
-            
-            
+
+
           </div>
           {{-- <div class="row">
             <div class="col-12 d-flex align-items-end">
-              
+
                   <h5 class="card-title"></h5>
-    
+
                   <!-- Pagination with icons -->
                   <nav aria-label="Page navigation example">
                     <ul class="pagination">
@@ -250,10 +249,10 @@
                       </li>
                     </ul>
                   </nav><!-- End Pagination with icons -->
-    
-            
+
+
             </div>
-     
+
           </div> --}}
         </div><!-- End Left side columns -->
 
@@ -270,15 +269,18 @@
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    
+
   <script>
 
 
     const req_url_search_table_post = "{{route('SearchPost')}}";
     const req_url_sontinue_post = "{{route('ContinuePost')}}";
+    const req_url_delete_post = "{{route('DeletePost')}}";
     const token = "{{$client -> token}}";
     const username = "{{$client -> username}}";
     const phone = "{{$client -> phone}}";
+
+    document.querySelector('#username').textContent = username
 
   </script>
 

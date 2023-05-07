@@ -51,7 +51,7 @@
                 <div class="card-body">
                   
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Clientni O’zgartirish</h5>
+                    <h5 class="card-title text-center pb-0 fs-4"> Mijoz ma'lumotlarini o'zgartirish:</h5>
                     <p class="text-center small"></p>
                   </div>
 
@@ -69,7 +69,7 @@
                     <div class="col-12">
                       <label for="pass" class="form-label">Tel.nomer</label>
                       <input type="phone" value="{{$client -> phone}}" name="phone" class="form-control" id="phone" required>
-                      <div class="invalid-feedback">Tel.Nomerni yozing!</div>
+                      <div class="invalid-feedback">Telfon nomerini!</div>
                     </div>
 
                     <div class="col-12">

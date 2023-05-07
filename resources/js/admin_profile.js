@@ -28,7 +28,7 @@ $("#search_post_submit").on("click", function(e) {
 
       let html = '<table class="table table-striped">';
       html += '<tr>';
-      
+
       html += '<th scope="col">ID</th>';
       html += '<th scope="col">F.I.O</th>';
       html += '<th scope="col">Tel</th>';
@@ -37,7 +37,7 @@ $("#search_post_submit").on("click", function(e) {
 
       html += '</tr>';
 
-      data.forEach(function(obj) { 
+      data.forEach(function(obj) {
         let state_china = "";
         let state_uzb = "";
         let state_cli = "";
@@ -53,7 +53,7 @@ $("#search_post_submit").on("click", function(e) {
         }
 
         html += '<tr>';
-        
+
         html += '<td scope="row">'+token+'</td>';
         html += '<td>'+username+'</td>';
         html += '<td>'+phone+'</td>';
@@ -67,12 +67,20 @@ $("#search_post_submit").on("click", function(e) {
                 <li class="breadcrumb-item `+state_china+`"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="`+obj.china_date+`" aria-describedby="tooltip718021`+obj.id+`">Xitoy</li>
                 <li class="breadcrumb-item `+state_uzb+`" data-bs-toggle="tooltip" data-bs-placement="bottom" title="`+obj.uzbekistan_date+`" aria-describedby="tooltip718032`+obj.id+`" >Uzbekistan</li>
                 <li class="breadcrumb-item `+state_cli+`" data-bs-toggle="tooltip" data-bs-placement="bottom" title="`+obj.client_date+`" aria-describedby="tooltip718013`+obj.id+`">Mijoz</li>
+								<li>
+									<form class="mx-4" method="post" action="`+req_url_delete_post+`">
+										<input type="hidden" name="_token" value="`+$('meta[name="csrf-token"]').attr('content')+`"/>
+									  <input type="hidden" name="id" value="`+obj.id+`"/>
+										<input type="hidden" name="clid" value="`+obj.clid+`"/>
+										<button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+									</form>
+								</li>
               </ol>
             </nav>
             </a>
-                            
+
           </div>
-                         
+
         </td>
         `;
 
@@ -128,6 +136,7 @@ $('#search_post').on('keypress', function (e) {
 $('#search_post_submit').trigger('click');
 
 $('#tkn').html(token);
+
 
 
 function getQueryVariable(variable) {

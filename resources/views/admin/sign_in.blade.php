@@ -68,19 +68,19 @@
                   <form method="POST" action="{{route('SignInValidate')}}" class="row g-3 needs-validation" novalidate>
                     @csrf
                     <div class="col-12">
-                      <label for="login" class="form-label">Login</label>
+                      <label for="login" class="form-label">Loginni kiriting</label>
                       <input type="text" name="login" class="form-control" id="login" required>
-                      <div class="invalid-feedback">Please, enter Login!</div>
+                      <div class="invalid-feedback">Iltimos loginni kiriting yoki tekshiring!</div>
                     </div>
 
                     <div class="col-12">
-                      <label for="pass" class="form-label">Password</label>
+                      <label for="pass" class="form-label">Parolni kiriting</label>
                       <input type="password" name="password" class="form-control" id="pass" required>
-                      <div class="invalid-feedback">Please enter Password!</div>
+                      <div class="invalid-feedback">Iltimos parolni kiriting yoki tekshiring!</div>
                     </div>
 
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Sign In</button>
+                      <button class="btn btn-primary w-100" type="submit">Tizimga kirish</button>
                     </div>
                     
                   </form>
