@@ -34,6 +34,7 @@ $("#search_post_submit").on("click", function(e) {
       html += '<th scope="col">Tel</th>';
       html += '<th scope="col">Track №</th>';
       html += '<th scope="col">Jarayon</th>';
+      html += '<th scope="col">Ochirish</th>';
 
       html += '</tr>';
 
@@ -67,14 +68,6 @@ $("#search_post_submit").on("click", function(e) {
                 <li class="breadcrumb-item `+state_china+`"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="`+obj.china_date+`" aria-describedby="tooltip718021`+obj.id+`">Xitoy</li>
                 <li class="breadcrumb-item `+state_uzb+`" data-bs-toggle="tooltip" data-bs-placement="bottom" title="`+obj.uzbekistan_date+`" aria-describedby="tooltip718032`+obj.id+`" >Uzbekistan</li>
                 <li class="breadcrumb-item `+state_cli+`" data-bs-toggle="tooltip" data-bs-placement="bottom" title="`+obj.client_date+`" aria-describedby="tooltip718013`+obj.id+`">Mijoz</li>
-								<li>
-									<form class="mx-4" method="post" action="`+req_url_delete_post+`">
-										<input type="hidden" name="_token" value="`+$('meta[name="csrf-token"]').attr('content')+`"/>
-									  <input type="hidden" name="id" value="`+obj.id+`"/>
-										<input type="hidden" name="clid" value="`+obj.clid+`"/>
-										<button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-									</form>
-								</li>
               </ol>
             </nav>
             </a>
@@ -82,6 +75,14 @@ $("#search_post_submit").on("click", function(e) {
           </div>
 
         </td>
+				<td>
+					<form class="" method="post" action="`+req_url_delete_post+`">
+						<input type="hidden" name="_token" value="`+$('meta[name="csrf-token"]').attr('content')+`"/>
+						<input type="hidden" name="id" value="`+obj.id+`"/>
+						<input type="hidden" name="clid" value="`+obj.clid+`"/>
+						<button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+					</form>
+				</td>
         `;
 
         html += '</tr>';
